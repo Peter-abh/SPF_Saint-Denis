@@ -1,0 +1,428 @@
+/* ================================
+   STYLES PERSONNALISÉS
+   ================================ */
+
+/* Configuration Tailwind personnalisée */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables CSS personnalisées */
+:root {
+  --primary-red: #dc2626;
+  --primary-red-dark: #b91c1c;
+  --gray-900: #111827;
+  --gray-100: #f3f4f6;
+}
+
+/* Polices personnalisées */
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Inria Sans', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+/* ================================
+   CARROUSEL HERO
+   ================================ */
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+/* Fallback backgrounds si les images ne sont pas trouvées */
+.carousel-slide:nth-child(1) {
+  background-color: #dc2626;
+}
+
+.carousel-slide:nth-child(2) {
+  background-color: #b91c1c;
+}
+
+.carousel-slide:nth-child(3) {
+  background-color: #f97316;
+}
+
+.carousel-nav {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.carousel-nav:active {
+  transform: scale(0.95);
+}
+
+.carousel-indicators {
+  display: flex;
+  gap: 12px;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+}
+
+.carousel-dot.active {
+  background: white;
+  border-color: white;
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.carousel-dot:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Animation d'entrée pour le contenu des slides */
+.carousel-slide.active h1,
+.carousel-slide.active p,
+.carousel-slide.active .flex {
+  animation: slideInUp 0.8s ease-out;
+}
+
+.carousel-slide.active h1 {
+  animation-delay: 0.2s;
+}
+
+.carousel-slide.active p {
+  animation-delay: 0.4s;
+}
+
+.carousel-slide.active .flex {
+  animation-delay: 0.6s;
+}
+
+/* ================================
+   NAVIGATION
+   ================================ */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background-color: var(--primary-red);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ================================
+   CALENDRIER
+   ================================ */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background-color: #e5e7eb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.calendar-header {
+  background-color: #B4362A;
+  color: white;
+  padding: 12px 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.calendar-day {
+  background-color: white;
+  padding: 8px 4px;
+  min-height: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.calendar-day:hover {
+  background-color: #f9fafb;
+}
+
+.calendar-day.other-month {
+  background-color: #f9fafb;
+  color: #9ca3af;
+}
+
+.calendar-day.today {
+  background-color: #fef3c7;
+  border-color: #f59e0b;
+  font-weight: 600;
+}
+
+.calendar-day.has-event {
+  background-color: #fef2f2;
+}
+
+.calendar-day-number {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.event-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 4px;
+}
+
+.event-dot.green { background-color: #10b981; }
+.event-dot.orange { background-color: #f97316; }
+.event-dot.pink { background-color: #ec4899; }
+.event-dot.blue { background-color: #3b82f6; }
+.event-dot.red { background-color: #ef4444; }
+.event-dot.black { background-color: #1f2937; }
+
+/* Positionnement des points d'événements */
+.event-dot:nth-child(2) { left: 4px; }
+.event-dot:nth-child(3) { left: 12px; }
+.event-dot:nth-child(4) { left: 20px; }
+.event-dot:nth-child(5) { left: 28px; }
+
+/* ================================
+   CARTES ACTUALITÉS
+   ================================ */
+.actualite-card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.actualite-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.actualite-image {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* ================================
+   PROCHAINES ACTIVITÉS
+   ================================ */
+.activite-card {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid var(--primary-red);
+  transition: all 0.2s ease;
+}
+
+.activite-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.activite-date {
+  color: var(--primary-red);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.activite-titre {
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 4px 0;
+}
+
+.activite-lieu {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* ================================
+   LOADING ANIMATIONS
+   ================================ */
+.loading-placeholder {
+  animation: fadeInOut 2s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* ================================
+   BOUTONS PERSONNALISÉS
+   ================================ */
+.btn-primary {
+  background-color: var(--primary-red);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(220, 38, 38, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary-red);
+  border: 2px solid var(--primary-red);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-red);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ================================
+   ANIMATIONS PERSONNALISÉES
+   ================================ */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* ================================
+   RESPONSIVE DESIGN AMÉLIORATIONS
+   ================================ */
+@media (max-width: 768px) {
+  .calendar-grid {
+    font-size: 0.75rem;
+  }
+  
+  .calendar-day {
+    min-height: 40px;
+    padding: 4px 2px;
+  }
+  
+  .calendar-day-number {
+    font-size: 0.75rem;
+  }
+  
+  .event-dot {
+    width: 4px;
+    height: 4px;
+  }
+}
+
+/* ================================
+   UTILITAIRES
+   ================================ */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ================================
+   SCROLL BEHAVIOR
+   ================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ================================
+   CUSTOM SCROLLBAR
+   ================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-red);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-red-dark);
+}

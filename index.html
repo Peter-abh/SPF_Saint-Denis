@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secours Populaire Saint-Denis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <!-- Ligne supérieure -->
+        <div class="border-b border-gray-200">
+            <div class="container mx-auto px-4 py-2">
+                <div class="flex items-center justify-between">
+                    <!-- Logo et texte -->
+                    <div class="flex items-center space-x-4">
+                        <img src="assets/images/logo-sp.png" alt="Secours Populaire" class="h-12 w-12">
+                        <div class="hidden md:flex items-center">
+                            <div class="h-8 w-px bg-gray-300 mx-4"></div>
+                            <button class="bg-blue-600 text-white px-4 py-1 text-sm font-medium hover:bg-blue-700 transition-colors">
+                                COMITE DE SAINT-DENIS
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Boutons d'action -->
+                    <div class="flex items-center space-x-3">
+                        <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-red-700 transition-colors flex items-center">
+                            <i class="fas fa-hands-helping mr-2"></i>
+                            Faire un don
+                        </button>
+                        <button class="border border-blue-600 text-blue-600 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-50 transition-colors">
+                            Devenir Bénévole
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ligne inférieure - Navigation -->
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-center">
+                <!-- Navigation principale -->
+                <div class="hidden md:flex items-center space-x-24 py-8">
+                    <a href="#accueil" class="text-gray-700 border-b-2 border-red-600 text-blue-500 font-semibold">Accueil</a>
+                    <a href="comite.html" class="nav-link text-gray-700 hover:text-red-600 font-medium">Le comité</a>
+                    <a href="activites.html" class="nav-link text-gray-700 hover:text-red-600 font-medium flex items-center">
+                        Nos Activités
+                    </a>
+                    <a href="infos.html" class="nav-link text-gray-700 hover:text-red-600 font-medium flex items-center">
+                        Infos pratiques
+                        <i class="fas fa-chevron-down text-xs ml-1">
+                        </i>
+                    </a>
+                    <a href="#archives" class="nav-link text-gray-700 hover:text-red-600 font-medium">Archives</a>
+                    <div class="flex items-center space-x-4 ml-6">
+                        <button class="text-gray-600 hover:text-red-600">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <div class="flex items-center text-gray-600 hover:text-red-600 cursor-pointer">
+                            <i class="fas fa-globe mr-1"></i>
+                            <span class="text-sm">Fr</span>
+                            <i class="fas fa-chevron-down text-xs ml-1"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Menu mobile button -->
+                <button class="md:hidden text-gray-700 py-3" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div class="md:hidden hidden border-t border-gray-200" id="mobile-menu">
+            <div class="flex flex-col py-2">
+                <a href="#accueil" class="nav-link px-4 py-3 text-gray-700 hover:bg-gray-100 border-b border-gray-100">Accueil</a>
+                <a href="#comite" class="nav-link px-4 py-3 text-gray-700 hover:bg-gray-100 border-b border-gray-100">Le comité</a>
+                <a href="#activites" class="nav-link px-4 py-3 text-gray-700 hover:bg-gray-100 border-b border-gray-100 flex justify-between items-center">
+                    <span>Nos Activités</span>
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </a>
+                <a href="#infos" class="nav-link px-4 py-3 text-gray-700 hover:bg-gray-100 border-b border-gray-100 flex justify-between items-center">
+                    <span>Infos pratiques</span>
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </a>
+                <a href="#archives" class="nav-link px-4 py-3 text-gray-700 hover:bg-gray-100">Archives</a>
+                <div class="p-4 flex flex-col space-y-3 mt-2">
+                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-red-700 transition-colors flex items-center justify-center">
+                        <i class="fas fa-hands-helping mr-2"></i>
+                        Faire un don
+                    </button>
+                    <button class="border border-blue-600 text-blue-600 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-50 transition-colors">
+                        Devenir Bénévole
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - Carrousel -->
+    <section id="accueil" class="relative h-screen overflow-hidden">
+        <!-- Slides du carrousel -->
+        <div class="carousel-container relative w-full h-full">
+            <!-- Slide 1 - Urgence Palestine -->
+            <div class="carousel-slide active bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/hero-background.jpg');">
+                <div class="absolute inset-0 flex items-center justify-center text-center">
+                    <div class="max-w-4xl text-white px-4">
+                        <div class="mb-6">
+                            <span class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-medium">
+                                Urgence Palestine
+                            </span>
+                        </div>
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                            Participez à l'urgence et soutenez le peuple palestinien
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                           Un geste, aussi petit soit-il peut faire la difference 
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button class="bg-red-600 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors font-medium text-lg">
+                                Participer à l'urgence
+                            </button>
+                            <button class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-gray-900 transition-colors font-medium text-lg">
+                                En savoir plus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 - Tout ce qui est humain -->
+            <div class="carousel-slide bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/hero-background.jpg');">
+                <div class="absolute inset-0 flex items-center justify-center text-center">
+                    <div class="max-w-4xl text-white px-4">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                            Tout ce qui est humain est nôtre
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                            Depuis 80 ans, nous agissons pour faire vivre la solidarité au quotidien
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button class="bg-red-600 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors font-medium text-lg">
+                                Devenir Bénévole
+                            </button>
+                            <button class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-gray-900 transition-colors font-medium text-lg">
+                                Faire un don
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 - Prochaine activité (Dynamique) -->
+            <div class="carousel-slide bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/hero-background.jpg');">
+                <div class="absolute inset-0 flex items-center justify-center text-center">
+                    <div class="max-w-4xl text-white px-4" id="slide-prochaine-activite">
+                        <!-- Le contenu sera mis à jour dynamiquement par JavaScript -->
+                        <div class="mb-6">
+                            <span class="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium">
+                                Prochaine activité
+                            </span>
+                        </div>
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                            Chargement...
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                           Chargement des informations...
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button class="bg-red-600 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors font-medium text-lg">
+                                Participer
+                            </button>
+                            <button class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-gray-900 transition-colors font-medium text-lg" onclick="document.getElementById('calendrier').scrollIntoView({behavior: 'smooth'})">
+                                Voir le calendrier
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation du carrousel -->
+        <button class="carousel-nav carousel-prev absolute left-4 top-1/2 text-white hover:text-red-600 transition-colors z-20">
+            <i class="fas fa-chevron-left text-2xl"></i>
+        </button>
+        <button class="carousel-nav carousel-next absolute right-4 top-1/2 text-white hover:text-red-600 transition-colors z-20">
+            <i class="fas fa-chevron-right text-2xl"></i>
+        </button>
+
+        <!-- Indicateurs du carrousel -->
+        <div class="carousel-indicators absolute bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+            <button class="carousel-dot active w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition-opacity" data-slide="0"></button>
+            <button class="carousel-dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition-opacity" data-slide="1"></button>
+            <button class="carousel-dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition-opacity" data-slide="2"></button>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white z-20">
+            <div class="animate-bounce">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Comité -->
+    <section id="comite" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">NOTRE COMITÉ</h2>
+                    <div class="text-gray-700 space-y-4">
+                        <p>
+                            Depuis sa création en <span class="font-semibold text-red-600">1945</span>, notre comité agit au cœur de Saint-Denis pour faire vivre la 
+                            solidarité au quotidien. Installé à la Bourse du Travail, nous venons en aide aux personnes en difficulté sans 
+                            distinction d'origine, d'âge ou de situation.
+                        </p>
+                        <p>
+                            Depuis 80 ans, nous agissons pour faire vivre la solidarité au quotidien. Installé à la Bourse du Travail, nous venons en aide aux personnes en difficulté sans distinction d'origine, d'âge ou de situation.
+                        </p>
+                    </div>
+                    <button class="mt-6 bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-medium">
+                        Lire la suite
+                    </button>
+                </div>
+                <div>
+                    <img src="assets/images/comite-team.jpg" alt="Notre équipe" class="w-full rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Nos Activités -->
+    <section id="activites" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">NOS ACTIVITÉS</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Activité 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="p-8 text-center">
+                        <div class="w-24 h-24 mx-auto mb-6">
+                            <img src="assets/images/icons/acces-droits.png" alt="Accès aux droits" class="w-full h-full object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Accès aux droits</h3>
+                    </div>
+                </div>
+
+                <!-- Activité 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="p-8 text-center">
+                        <div class="w-24 h-24 mx-auto mb-6">
+                            <img src="assets/images/icons/culture-loisirs.png" alt="Culture et Loisirs" class="w-full h-full object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Culture et Loisirs</h3>
+                    </div>
+                </div>
+
+                <!-- Activité 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="p-8 text-center">
+                        <div class="w-24 h-24 mx-auto mb-6">
+                            <img src="assets/images/icons/hygiene-sante.png" alt="Hygiène & Santé" class="w-full h-full object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Hygiène & Santé</h3>
+                    </div>
+                </div>
+
+                <!-- Activité 4 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="p-8 text-center">
+                        <div class="w-24 h-24 mx-auto mb-6">
+                            <img src="assets/images/icons/distribution.png" alt="Distribution" class="w-full h-full object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Distribution</h3>
+                    </div>
+                </div>
+
+                <!-- Activité 5 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="p-8 text-center">
+                        <div class="w-24 h-24 mx-auto mb-6">
+                            <img src="assets/images/icons/collecte-braderie.png" alt="Collecte/Braderie" class="w-full h-full object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Collecte/Braderie</h3>
+                    </div>
+                </div>
+
+                <!-- Activité 6 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="p-8 text-center">
+                        <div class="w-24 h-24 mx-auto mb-6">
+                            <img src="assets/images/icons/aide-internationale.png" alt="Aide Internationale" class="w-full h-full object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Aide Internationale</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bouton Voir plus -->
+            <div class="text-center mt-8">
+                <a href="#" class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300">
+                    Voir plus
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Dernières Publications -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">NOS DERNIÈRES PUBLICATIONS</h2>
+            
+            <div id="actualites-container" class="grid md:grid-cols-3 gap-8">
+                <!-- Les actualités seront chargées dynamiquement par JavaScript -->
+                <div class="loading-placeholder bg-white p-6 rounded-lg shadow-md">
+                    <div class="animate-pulse">
+                        <div class="bg-gray-300 h-48 w-full rounded mb-4"></div>
+                        <div class="bg-gray-300 h-4 w-3/4 rounded mb-2"></div>
+                        <div class="bg-gray-300 h-4 w-1/2 rounded"></div>
+                    </div>
+                </div>
+                <div class="loading-placeholder bg-white p-6 rounded-lg shadow-md">
+                    <div class="animate-pulse">
+                        <div class="bg-gray-300 h-48 w-full rounded mb-4"></div>
+                        <div class="bg-gray-300 h-4 w-3/4 rounded mb-2"></div>
+                        <div class="bg-gray-300 h-4 w-1/2 rounded"></div>
+                    </div>
+                </div>
+                <div class="loading-placeholder bg-white p-6 rounded-lg shadow-md">
+                    <div class="animate-pulse">
+                        <div class="bg-gray-300 h-48 w-full rounded mb-4"></div>
+                        <div class="bg-gray-300 h-4 w-3/4 rounded mb-2"></div>
+                        <div class="bg-gray-300 h-4 w-1/2 rounded"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Nos Horaires d'Ouverture -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">NOS HORAIRES D'OUVERTURES</h2>
+            <div class="w-24 h-1 bg-red-600 mx-auto mb-8"></div>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                La distribution Alimentaire a lieu 1 samedi tous les 15 jours à la Maison de la Solidarité. Possibilité de déposer des vêtements, de la vaisselle ou des jouets du lundi au dimanche de 9h à 20h à l'accueil de la Bourse du Travail.
+            </p>
+
+            <div id="horaires-accordeon" class="max-w-4xl mx-auto">
+                <!-- Accordion Item 1 -->
+                <div class="accordion-item border-b border-gray-200">
+                    <button class="accordion-header w-full flex justify-between items-center py-4 text-left text-lg font-semibold text-gray-800">
+                        <span>Accueil – Accès aux droits</span>
+                        <i class="fas fa-chevron-up transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content overflow-hidden max-h-screen transition-all duration-500 ease-in-out">
+                        <div class="grid grid-cols-7 text-center py-4">
+                            <div><p class="font-medium">Lundi</p><p class="text-gray-600">Fermé</p></div>
+                            <div><p class="font-medium">Mardi</p><p class="text-gray-600">Fermé</p></div>
+                            <div><p class="font-medium">Mercredi</p><p class="text-gray-600">08:30 – 10:30</p></div>
+                            <div><p class="font-medium">Jeudi</p><p class="text-gray-600">Fermé</p></div>
+                            <div><p class="font-medium">Vendredi</p><p class="text-gray-600">Fermé</p></div>
+                            <div><p class="font-medium">Samedi</p><p class="text-gray-600">08:30 – 10:30</p></div>
+                            <div><p class="font-medium">Dimanche</p><p class="text-gray-600">Fermé</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 2 -->
+                <div class="accordion-item border-b border-gray-200">
+                    <button class="accordion-header w-full flex justify-between items-center py-4 text-left text-lg font-semibold text-gray-800">
+                        <span>Distribution Alimentaire</span>
+                        <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+                        <div class="py-4 text-gray-600">
+                            <p>
+                                Les horaires pour la distribution alimentaire seront bientôt disponibles.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 3 -->
+                <div class="accordion-item border-b border-gray-200">
+                    <button class="accordion-header w-full flex justify-between items-center py-4 text-left text-lg font-semibold text-gray-800">
+                        <span>Pôle Hygiène pour les SDF</span>
+                        <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+                        <div class="py-4 text-gray-600">
+                            <p>
+                                Les horaires pour le pôle hygiène seront bientôt disponibles.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 4 -->
+                <div class="accordion-item border-b border-gray-200">
+                    <button class="accordion-header w-full flex justify-between items-center py-4 text-left text-lg font-semibold text-gray-800">
+                        <span>Vestiaire (Bourse du Travail)</span>
+                        <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+                        <div class="py-4 text-gray-600">
+                            <p>
+                                Les horaires pour le vestiaire seront bientôt disponibles.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Nos Partenaires -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">NOS PARTENAIRES</h2>
+            <div class="w-24 h-1 bg-red-600 mx-auto mb-12"></div>
+            <div class="flex justify-center items-center space-x-12">
+                <img src="assets/images/banque-de-france.png" alt="Banque de France" class="h-12">
+                <img src="assets/images/decathlon.png" alt="Decathlon" class="h-12">
+                <img src="assets/images/stade-de-france.png" alt="Stade de France" class="h-12">
+                <img src="assets/images/decathlon.png" alt="Decathlon" class="h-12">
+                <img src="assets/images/Logo_ville_Saint-Denis.png" alt="Logo_ville_Saint-Denis" class="h-12">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Logo et description -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/images/logo-sp.png" alt="Secours Populaire" class="h-10 w-10 bg-white p-2 rounded-full">
+                        <div>
+                            <h3 class="text-xl font-bold">Comité de Saint-Denis</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Depuis 80 ans, nous agissons pour faire vivre la solidarité au quotidien à Saint-Denis.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>comitesdenis@gmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <span>06 30 72 95 95</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>7 rue Jacques Duclos, Saint-Denis (93200)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Liens rapides -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#accueil" class="text-gray-300 hover:text-white transition-colors">Accueil</a></li>
+                        <li><a href="#comite" class="text-gray-300 hover:text-white transition-colors">Le comité</a></li>
+                        <li><a href="#activites" class="text-gray-300 hover:text-white transition-colors">Nos Activités</a></li>
+                        <li><a href="#calendrier" class="text-gray-300 hover:text-white transition-colors">Calendrier</a></li>
+                    </ul>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white text-2xl transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white text-2xl transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 Secours Populaire de Saint-Denis. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const accordionContainer = document.getElementById('horaires-accordeon');
+        if (accordionContainer) {
+            const accordionItems = accordionContainer.querySelectorAll('.accordion-item');
+
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                const content = item.querySelector('.accordion-content');
+                const icon = header.querySelector('i');
+
+                header.addEventListener('click', () => {
+                    const isOpen = content.classList.contains('max-h-screen');
+
+                    // Fermer tous les autres accordéons
+                    accordionItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            const otherContent = otherItem.querySelector('.accordion-content');
+                            const otherIcon = otherItem.querySelector('.accordion-header i');
+                            otherContent.classList.remove('max-h-screen');
+                            otherContent.classList.add('max-h-0');
+                            otherIcon.classList.remove('fa-chevron-up');
+                            otherIcon.classList.add('fa-chevron-down');
+                        }
+                    });
+
+                    // Ouvrir ou fermer l'accordéon cliqué
+                    if (isOpen) {
+                        content.classList.remove('max-h-screen');
+                        content.classList.add('max-h-0');
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    } else {
+                        content.classList.remove('max-h-0');
+                        content.classList.add('max-h-screen');
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    }
+                });
+            });
+        }
+    });
+    </script>
+</body>
+</html>
